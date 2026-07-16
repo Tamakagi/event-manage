@@ -1,5 +1,7 @@
 export async function onRequest(context) {
-  return Response.json({
-    message: "Hello"
-  });
+  const { results } = await context.env.DB
+    .prepare("SELECT * FROM jobs")
+    .all();
+
+  return Response.json(results);
 }

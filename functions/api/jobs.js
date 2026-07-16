@@ -4,4 +4,5 @@ export async function onRequest(context) {
     .all();
 
   return Response.json(results);
+  //テストだよ
 }
